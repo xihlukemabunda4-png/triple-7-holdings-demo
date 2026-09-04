@@ -1,0 +1,22 @@
+# Line endings are pinned so three people on three machines cannot produce
+# diffs where a whole file looks rewritten because an editor flipped CRLF/LF.
+# Everything text is stored AND checked out as LF, which is what Vercel's
+# Linux builders see anyway. Windows editors handle LF fine.
+
+* text=auto eol=lf
+
+*.html  text eol=lf
+*.css   text eol=lf
+*.js    text eol=lf
+*.json  text eol=lf
+*.md    text eol=lf
+
+# Binaries — Git must never rewrite bytes inside these.
+*.jpg   binary
+*.jpeg  binary
+*.png   binary
+*.webp  binary
+*.ico   binary
+*.mp4   binary
+*.woff  binary
+*.woff2 binary
