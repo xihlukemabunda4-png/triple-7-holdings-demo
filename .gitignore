@@ -1,0 +1,25 @@
+# Dependencies. tools/ is local-only image tooling — 20 MB of sharp binaries
+# that nobody needs in the repo. Reinstall with: cd tools && npm install
+node_modules/
+
+# Raw photo working files. The finished images in images/stones/ ARE committed;
+# the originals and crops that produced them are not.
+tools/incoming/
+
+# Secrets never belong in this repo. Server-side keys live in Vercel
+# environment variables — see COMMERCE.md.
+.env
+.env.*
+*.pem
+
+# OS and editor cruft
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+*.swp
+.idea/
+.vscode/
+
+# Build and deploy artefacts
+.vercel

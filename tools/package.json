@@ -1,0 +1,12 @@
+{
+  "name": "triple7-tools",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Local image tooling. Not deployed - see .vercelignore.",
+  "scripts": {
+    "stones": "node normalise-stones.js"
+  },
+  "dependencies": {
+    "sharp": "^0.33.5"
+  }
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sandbox Payment — Triple 7 Holdings</title>
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/png" href="images/logo-icon.png?v=2">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/commerce.css">
+</head>
+<body>
+
+<!-- ============================================================
+     SANDBOX GATEWAY — demo mode only.
+     Stands in for the PayFast payment page so the whole flow can be
+     walked end to end without a merchant account. As soon as
+     js/config.js carries real Supabase credentials, js/api.js sends
+     the browser to the real gateway instead and this page is never
+     reached. Delete it before the site goes live.
+     ============================================================ -->
+
+<nav class="nav is-scrolled">
+  <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;width:100%">
+    <a href="index.html" class="nav-mark" aria-label="Triple 7 Holdings — home"><img src="images/logo-light.png?v=2" alt="Triple 7 Holdings" width="437" height="124"></a>
+    <span class="sandbox-flag" style="border-color:var(--line-inv);color:var(--text-light-2)">Sandbox gateway</span>
+  </div>
+</nav>
+
+<section class="section on-dark" style="min-height:100svh;display:flex;align-items:center;padding-top:140px">
+  <div class="wrap">
+    <div id="pay-root" style="max-width:560px;margin:0 auto" aria-live="polite"></div>
+  </div>
+</section>
+
+<script src="js/script.js"></script>
+<script src="js/config.js"></script>
+<script src="js/t7-data.js"></script>
+<script src="js/api.js"></script>
+<script src="js/commerce.js"></script>
+<script src="js/pay.js"></script>
+</body>
+</html>

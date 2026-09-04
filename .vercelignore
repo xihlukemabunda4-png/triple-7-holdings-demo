@@ -1,0 +1,6 @@
+# Local tooling — not part of the deployed site
+serve.js
+.claude
+tools
+node_modules
+*.zip
