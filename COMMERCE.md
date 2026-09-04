@@ -243,16 +243,17 @@ orders will sit at `pending` forever and the confirmation page will keep saying
   product page as not being this stone) → the drawing. A missing file is
   removed rather than left as a broken image.
 
-  Supplying the pictures is Person 1's job. Two things they need before they
-  start, or it gets redone: files are named after the cut — `round.jpg`,
-  `princess.jpg`, `oval.jpg`, `emerald.jpg`, `pear.jpg`, `cushion.jpg`,
-  `marquise.jpg`, `radiant.jpg`, `rough.jpg` — and they want **black
-  backgrounds**, square, about 1400px. The plate blends a dark backdrop away so
-  the stone floats in the same ink frame as the drawings; a white backdrop
-  survives as a bright square. `tools/normalise-stones.js` will rescue a light
-  one, imperfectly.
+  **There are currently no photographs — every stone shows its drawing.**
+  Supplying the pictures, and the art direction around them, is Person 1's.
+  Two things they need before they start, or it gets redone: **black
+  backgrounds**, square, about 1400px — the plate blends a dark backdrop away
+  so the stone floats in the same ink frame as the drawings, while a white one
+  survives as a bright square. And `js/commerce.js` has an empty
+  `T7.SHAPE_PHOTOS` map: one line per picture as it lands, keyed to the cut.
+  `tools/normalise-stones.js` will rescue a light backdrop, imperfectly.
 
-  Only per-stone photography should ship for anything actually on sale.
+  Only per-stone photography via `products.image_url` should ship for anything
+  actually on sale.
 - **Reserving stock at checkout.** Today the first *paid* order takes the
   stone, and a second buyer who was mid-checkout gets told at the payment step.
   For a shop this size that is fine and it is stated plainly on the product

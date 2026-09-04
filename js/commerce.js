@@ -81,22 +81,21 @@ window.T7 = window.T7 || {};
           product page, because a buyer is entitled to assume a photo
           shows the diamond they are being sold.
 
-     If neither exists, or the file is missing, the drawn plate below
-     is what they get. Nothing 404s into a broken-image icon.
+     If neither exists, the drawn plate is what they get, and a file that
+     goes missing is removed rather than left as a broken-image icon.
 
-     Drop files into images/stones/ named after the cut and they appear
-     with no code change. */
-  T7.SHAPE_PHOTOS = {
-    round:    'images/stones/round.jpg',
-    princess: 'images/stones/princess.jpg',
-    oval:     'images/stones/oval.jpg',
-    emerald:  'images/stones/emerald.jpg',
-    pear:     'images/stones/pear.jpg',
-    cushion:  'images/stones/cushion.jpg',
-    marquise: 'images/stones/marquise.jpg',
-    radiant:  'images/stones/radiant.jpg',
-    rough:    'images/stones/rough.jpg'
-  };
+     The map below is empty on purpose. Photography and art direction are
+     Person 1's, and an entry pointing at a file that does not exist costs a
+     failed request on every catalogue load. Add one line per picture as it
+     lands — nothing else changes:
+
+       round: 'images/stones/round.jpg',
+
+     Cuts in use: round, princess, oval, emerald, pear, cushion, marquise,
+     radiant, rough. Shoot them square on BLACK — the plate blends a dark
+     backdrop away so the stone floats in the same ink frame as the drawings,
+     while a white one survives as a bright square. */
+  T7.SHAPE_PHOTOS = {};
 
   T7.photoFor = function (stone) {
     if (stone.image_url) return { src: stone.image_url, ofThisStone: true };
