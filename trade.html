@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Investors — Triple 7 Holdings</title>
-<meta name="description" content="Governance, reporting, and partnership inquiries for Triple 7 Holdings.">
+<title>Trade Desk — Triple 7 Holdings</title>
+<meta name="description" content="Diamond and gold lots listed on the Triple 7 Holdings Kimberley Trade Desk.">
 <link rel="icon" type="image/png" href="images/logo-icon.png?v=2">
 <link rel="stylesheet" href="css/styles.css">
 <link rel="stylesheet" href="css/trade.css">
@@ -18,59 +18,83 @@
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
-      <a href="trade.html">Trade</a>
+      <a href="trade.html" class="is-active">Trade</a>
       <a href="locations.html">Locations</a>
-      <a href="investors.html" class="is-active">Investors</a>
+      <a href="investors.html">Investors</a>
       <a href="jobs.html">Jobs</a>
       <a href="contact.html" class="nav-cta">Contact</a>
     </div>
   </div>
 </nav>
 
-<header class="pagehead">
-  <div class="pagehead-media"><img src="images/hero-banner2.jpg" alt=""></div>
-  <div class="wrap">
-    <p class="eyebrow on-dark">Investors</p>
-    <h1 class="pagehead-title">Investor Relations</h1>
-    <p class="crumb"><a href="index.html">Home</a> / Investors</p>
+<header class="desk-head">
+  <div class="desk-inner">
+    <div class="desk-strip">
+      <span class="desk-id">Trade Desk <b>·&nbsp; Kimberley</b></span>
+      <div class="desk-actions">
+        <span class="desk-count" id="desk-count"></span>
+        <a class="desk-btn is-primary" href="signin.html">Sign In</a>
+        <a class="desk-btn" href="contact.html">Contact Desk</a>
+      </div>
+    </div>
+    <div class="desk-title-wrap">
+      <p class="desk-crumb">T7 / Desk</p>
+      <h1 class="desk-title" id="desk-title">Live Board</h1>
+      <p class="desk-sub" id="desk-sub">All diamond and gold lots currently listed on the Triple 7 Kimberley desk. Open a lot to request a quote.</p>
+    </div>
   </div>
 </header>
 
-<section class="section">
-  <div class="wrap split reveal">
-    <div class="split-media">
-      <img src="images/hero-banner3.jpg" alt="Diamond processing at a Triple 7 Holdings site">
-    </div>
-    <div class="split-text">
-      <p class="eyebrow">Governance</p>
-      <h3>Built on Transparency</h3>
-      <p>Triple 7 Holdings operates with an experienced board and management team, in accordance with international best practice across sustainability, health, safety, environment, and community relations.</p>
-      <p>As a client of the State Diamond Trader, our reporting and beneficiation practices are aligned with South Africa's regulatory framework for the diamond industry. Current financial reports, ownership structure, and partnership documentation are available on request.</p>
-    </div>
+<nav class="market-strip" aria-label="Trade Desk sections">
+  <div class="market-strip-inner">
+      <a href="trade.html" class="is-active">Live Board</a>
+      <a href="trade.html?commodity=diamond">Diamonds<span class="strip-state">Closed</span></a>
+      <a href="trade.html?commodity=gold">Gold<span class="strip-state">Closed</span></a>
+      <a href="how-to-buy.html">How To Buy</a>
+      <a href="provenance.html">Provenance</a>
+      <a href="buyer.html">Buyer</a>
+      <a href="seller.html">Seller</a>
   </div>
-</section>
+</nav>
 
-<section class="section-tight">
+<section class="desk-body">
   <div class="wrap">
-    <div class="section-head reveal">
-      <p class="eyebrow">Enquiries</p>
-      <h2 class="section-title">Speak With Us</h2>
-      <p class="section-body">For shareholder documentation, partnership proposals, or reporting requests, reach our team directly.</p>
+    <div class="stat-row" id="stat-row"></div>
+
+    <form class="board-controls is-collapsed" id="controls" aria-label="Filter lots">
+      <div class="search-wrap">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M16.5 16.5 21 21" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <input type="search" id="q" placeholder="Search lots" aria-label="Search by lot ID, name, commodity, type or keyword">
+      </div>
+      <div class="filter-row" id="filter-row"></div>
+    </form>
+
+    <div class="board-bar">
+      <button type="button" class="filters-toggle" id="filters-toggle" aria-expanded="false" aria-controls="controls">Filters</button>
+      <p class="board-count" id="board-count" role="status">Loading the board…</p>
+      <div style="display:flex;align-items:center;gap:16px">
+        <button type="button" class="reset-link" id="reset" hidden>Clear filters</button>
+        <label class="board-sort">Sort
+          <select id="sort">
+            <option value="newest">Newest</option>
+            <option value="oldest">Oldest</option>
+            <option value="commodity">Commodity</option>
+            <option value="lot">Lot ID</option>
+          </select>
+        </label>
+      </div>
     </div>
-    <dl class="spec reveal">
-      <div class="spec-row">
-        <dt>Enquiries</dt>
-        <dd><a href="mailto:info@triple7holdings.co.za">info@triple7holdings.co.za</a></dd>
-      </div>
-      <div class="spec-row">
-        <dt>Office</dt>
-        <dd><a href="tel:+27213001460">+27 21 300 1460</a></dd>
-      </div>
-      <div class="spec-row">
-        <dt>Registered Address</dt>
-        <dd>25 Villiers Street, Kimberley, South Africa</dd>
-      </div>
-    </dl>
+
+    <div id="board" aria-live="polite"></div>
+
+    <div id="alerts"></div>
+
+    <p class="desk-footnote">
+      Listings are maintained by the Triple 7 Trade Desk. Figures shown are desk listings,
+      not live market pricing. Commercial terms are issued per quote.
+    </p>
+
+    <noscript><div class="empty"><h3>Enable JavaScript</h3><p>The board is filtered in the browser. Call the Kimberley desk on +27 73 569 4045.</p></div></noscript>
   </div>
 </section>
 
@@ -108,14 +132,13 @@
         </ul>
       </div>
       <div>
-        <h4>Sites</h4>
+        <h4>Trade Desk</h4>
         <ul>
-          <li><a href="mine-maxwill.html">Maxwill Mine</a></li>
-          <li><a href="mine-bucklands.html">Bucklands Mine</a></li>
-          <li><a href="mine-christiana.html">Christiana Mine</a></li>
-          <li><a href="mine-modican.html">Modican Mine</a></li>
-          <li><a href="mine-thaba-kholo.html">Thaba Kholo</a></li>
-          <li><a href="mine-sepelong.html">Sepelong Game Farm</a></li>
+          <li><a href="trade.html">Live Board</a></li>
+          <li><a href="how-to-buy.html">How To Buy</a></li>
+          <li><a href="provenance.html">Provenance</a></li>
+          <li><a href="signin.html?role=buyer">Buyer Sign In</a></li>
+          <li><a href="signin.html?role=seller">Seller Sign In</a></li>
         </ul>
       </div>
       <div>
@@ -134,7 +157,14 @@
     </div>
   </div>
 </footer>
+
 <script src="js/script.js"></script>
+<script src="js/config.js"></script>
+<script src="js/t7-lots.js"></script>
+<script src="js/api.js"></script>
 <script src="js/trade.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/board.js"></script>
+<script src="js/alerts.js"></script>
 </body>
 </html>

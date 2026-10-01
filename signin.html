@@ -3,11 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Diamonds — Triple 7 Holdings</title>
-<meta name="description" content="Browse natural, untreated, ethically-sourced rough and polished diamonds from the Triple 7 Holdings mines across Southern Africa.">
+<title>Sign In — Trade Desk — Triple 7 Holdings</title>
+<meta name="description" content="Sandbox sign-in for the Triple 7 Holdings Trade Desk demonstration.">
+<meta name="robots" content="noindex">
 <link rel="icon" type="image/png" href="images/logo-icon.png?v=2">
 <link rel="stylesheet" href="css/styles.css">
-<link rel="stylesheet" href="css/commerce.css">
+<link rel="stylesheet" href="css/trade.css">
 </head>
 <body>
 
@@ -18,7 +19,7 @@
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
-      <a href="diamonds.html" class="is-active">Diamonds</a>
+      <a href="trade.html" class="is-active">Trade</a>
       <a href="locations.html">Locations</a>
       <a href="investors.html">Investors</a>
       <a href="jobs.html">Jobs</a>
@@ -27,54 +28,50 @@
   </div>
 </nav>
 
-<header class="pagehead">
-  <div class="pagehead-media"><img src="images/hero-banner3.jpg" alt=""></div>
-  <div class="wrap">
-    <p class="eyebrow on-dark">Rough &amp; Polished</p>
-    <h1 class="pagehead-title">The Collection</h1>
-    <p class="pagehead-sub">Every stone below came out of one of our own six sites. Nothing is treated, nothing is bought in, and each one is a single physical diamond — once it goes, it is gone.</p>
-    <p class="crumb"><a href="index.html">Home</a> / Diamonds</p>
+<header class="desk-head">
+  <div class="desk-inner">
+    <div class="desk-strip">
+      <span class="desk-id">Trade Desk <b>·&nbsp; Kimberley</b></span>
+      <div class="desk-actions">
+        <span class="desk-count" id="desk-count"></span>
+        <a class="desk-btn is-primary" href="signin.html">Sign In</a>
+        <a class="desk-btn" href="contact.html">Contact Desk</a>
+      </div>
+    </div>
+    <div class="desk-title-wrap">
+      <p class="desk-crumb"><a href="trade.html">T7 / Desk</a> / Sign in</p>
+      <h1 class="desk-title" id="desk-title">Sign In</h1>
+      <p class="desk-sub" id="desk-sub">Access the Triple 7 Trade Desk.</p>
+    </div>
   </div>
 </header>
 
-<section class="section">
+<nav class="market-strip" aria-label="Trade Desk sections">
+  <div class="market-strip-inner">
+      <a href="trade.html">Live Board</a>
+      <a href="trade.html?commodity=diamond">Diamonds<span class="strip-state">Closed</span></a>
+      <a href="trade.html?commodity=gold">Gold<span class="strip-state">Closed</span></a>
+      <a href="how-to-buy.html">How To Buy</a>
+      <a href="provenance.html">Provenance</a>
+      <a href="buyer.html">Buyer</a>
+      <a href="seller.html">Seller</a>
+  </div>
+</nav>
+<div class="sandbox-bar">
   <div class="wrap">
-    <div class="shop">
+    <b>Sandbox</b>
+    <span>Demonstration only — no password is checked, nothing is verified, and nothing you enter leaves this browser.</span>
+  </div>
+</div>
 
-      <form class="filters" id="filters" aria-label="Filter diamonds">
-        <div class="filters-head">
-          <h2>Refine</h2>
-          <button type="button" class="filter-reset" id="filter-reset" hidden>Clear all</button>
-        </div>
-        <!-- Groups are built from the catalogue itself so they stay honest
-             when the real inventory replaces the demo data. -->
-      </form>
-
-      <div>
-        <div class="shop-bar">
-          <button type="button" class="filters-toggle" id="filters-toggle" aria-expanded="false" aria-controls="filters">Refine</button>
-          <p class="shop-count" id="shop-count" role="status">Loading the collection…</p>
-          <label class="shop-sort">
-            Sort
-            <select id="sort">
-              <option value="price-desc">Price, high to low</option>
-              <option value="price-asc">Price, low to high</option>
-              <option value="carat-desc">Carat, high to low</option>
-              <option value="carat-asc">Carat, low to high</option>
-            </select>
-          </label>
-        </div>
-
-        <div class="stone-grid" id="results"></div>
-
-        <noscript>
-          <div class="shop-empty">
-            <h3>Enable JavaScript</h3>
-            <p>The collection is filtered in the browser. Call the Kimberley office on +27 73 569 4045 and we will walk you through what is available.</p>
-          </div>
-        </noscript>
+<section class="desk-body">
+  <div class="wrap">
+    <div class="auth-wrap">
+      <div class="auth-tabs" role="tablist" aria-label="Account type">
+        <button type="button" id="tab-buyer" role="tab" aria-selected="true">Buyer</button>
+        <button type="button" id="tab-seller" role="tab" aria-selected="false">Seller</button>
       </div>
-
+      <div id="signin-root"></div>
     </div>
   </div>
 </section>
@@ -105,7 +102,7 @@
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="diamonds.html">Diamonds</a></li>
+          <li><a href="trade.html">Trade</a></li>
           <li><a href="locations.html">Locations</a></li>
           <li><a href="investors.html">Investors</a></li>
           <li><a href="jobs.html">Jobs</a></li>
@@ -113,14 +110,13 @@
         </ul>
       </div>
       <div>
-        <h4>Sites</h4>
+        <h4>Trade Desk</h4>
         <ul>
-          <li><a href="mine-maxwill.html">Maxwill Mine</a></li>
-          <li><a href="mine-bucklands.html">Bucklands Mine</a></li>
-          <li><a href="mine-christiana.html">Christiana Mine</a></li>
-          <li><a href="mine-modican.html">Modican Mine</a></li>
-          <li><a href="mine-thaba-kholo.html">Thaba Kholo</a></li>
-          <li><a href="mine-sepelong.html">Sepelong Game Farm</a></li>
+          <li><a href="trade.html">Live Board</a></li>
+          <li><a href="how-to-buy.html">How To Buy</a></li>
+          <li><a href="provenance.html">Provenance</a></li>
+          <li><a href="signin.html?role=buyer">Buyer Sign In</a></li>
+          <li><a href="signin.html?role=seller">Seller Sign In</a></li>
         </ul>
       </div>
       <div>
@@ -142,9 +138,10 @@
 
 <script src="js/script.js"></script>
 <script src="js/config.js"></script>
-<script src="js/t7-data.js"></script>
+<script src="js/t7-lots.js"></script>
 <script src="js/api.js"></script>
-<script src="js/commerce.js"></script>
-<script src="js/catalogue.js"></script>
+<script src="js/trade.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/signin.js"></script>
 </body>
 </html>
