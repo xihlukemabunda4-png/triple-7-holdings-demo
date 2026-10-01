@@ -23,7 +23,7 @@
       <a href="locations.html">Locations</a>
       <a href="investors.html">Investors</a>
       <a href="jobs.html">Jobs</a>
-      <a href="contact.html" class="nav-cta">Contact</a>
+      <details class="account-menu"><summary>Account</summary><div class="account-dropdown"><a href="signin.html" class="account-signin">Sign in</a><a href="buyer.html">Buyer account</a><a href="seller.html">Seller account</a></div></details><a href="contact.html" class="nav-cta">Contact</a>
     </div>
   </div>
 </nav>
@@ -34,7 +34,7 @@
       <span class="desk-id">Trade Desk <b>·&nbsp; Kimberley</b></span>
       <div class="desk-actions">
         <span class="desk-count" id="desk-count"></span>
-        <a class="desk-btn is-primary" href="signin.html">Sign In</a>
+        
         <a class="desk-btn" href="contact.html">Contact Desk</a>
       </div>
     </div>
@@ -46,7 +46,7 @@
   </div>
 </header>
 
-<nav class="market-strip" aria-label="Trade Desk sections"><div class="market-strip-inner"><div class="market-primary"><a href="trade.html">Browse Lots</a><a href="how-to-buy.html">How to Buy</a><a href="provenance.html" class="is-active" aria-current="page">Origin &amp; Documentation</a></div><div class="market-accounts" aria-label="Trade accounts"><a href="buyer.html">Buyer account</a><a href="seller.html">Seller account</a></div></div></nav>
+<nav class="market-strip" aria-label="Trade Desk sections"><div class="market-strip-inner"><div class="market-primary"><a href="trade.html">Browse Lots</a><a href="how-to-buy.html">How to Buy</a><a href="provenance.html" class="is-active" aria-current="page">Origin &amp; Documentation</a></div></div></nav>
 
 <section class="desk-body">
   <div class="wrap">
@@ -56,7 +56,7 @@
       released by the desk to registered buyers as part of a quote, not published here.
     </div>
 
-    <div class="guide-layout" style="margin-top:30px"><aside class="guide-aside"><p class="eyebrow">Origin &amp; documentation</p><h2>Every purchase<br>starts with <em>questions.</em></h2><p>Explore what the desk states about sourcing and ask for the documentation relevant to your lot.</p><div class="guide-photo"><img src="images/hero-tabo1.jpg" alt="Mining machinery at work" loading="lazy"></div><a href="contact.html" class="textlink">Ask about a lot’s origin →</a></aside><div class="journey">
+    <div class="guide-layout" style="margin-top:30px"><aside class="guide-aside"><p class="eyebrow">Origin &amp; documentation</p><h2>Every purchase<br>starts with <em>questions.</em></h2><p>Explore what the desk states about sourcing and ask for the documentation relevant to your lot.</p><div class="guide-photo"><img src="images/hero-tabo1.jpg" alt="Mining machinery at work" loading="lazy"></div><a href="contact.html" class="btn btn-outline">Ask about a lot’s origin </a></aside><div class="journey">
       <div class="step"><span class="step-no">01</span><div><h3>Own production</h3><p>Triple 7 mines, sorts and supplies from its own sites across Southern Africa. Lots listed on the desk come from that production or from partnered production the desk has assessed.</p></div></div>
       <div class="step"><span class="step-no">02</span><div><h3>Natural and untreated</h3><p>Stones listed as natural and untreated are stated as such on the lot itself. Where the desk does not state a characteristic, the lot page leaves it blank rather than assuming it.</p></div></div>
       <div class="step"><span class="step-no">03</span><div><h3>Documentation on quote</h3><p>Origin and processing documentation is provided by the desk to registered buyers during the quote process, so that it travels with a named counterparty rather than sitting on a public page.</p></div></div>
@@ -143,5 +143,6 @@
 <script src="js/trade.js"></script>
 <script src="js/auth.js"></script>
 
+<script src="js/account-menu.js"></script>
 </body>
 </html>

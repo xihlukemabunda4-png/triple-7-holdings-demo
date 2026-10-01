@@ -23,71 +23,27 @@
       <a href="locations.html">Locations</a>
       <a href="investors.html">Investors</a>
       <a href="jobs.html">Jobs</a>
-      <a href="contact.html" class="nav-cta">Contact</a>
+      <details class="account-menu"><summary>Account</summary><div class="account-dropdown"><a href="signin.html" class="account-signin">Sign in</a><a href="buyer.html">Buyer account</a><a href="seller.html">Seller account</a></div></details><a href="contact.html" class="nav-cta">Contact</a>
     </div>
   </div>
 </nav>
 
-<header class="desk-head">
-  <div class="desk-inner">
-    <div class="desk-strip">
-      <span class="desk-id">Trade Desk <b>·&nbsp; Kimberley</b></span>
-      <div class="desk-actions">
-        <span class="desk-count" id="desk-count"></span>
-        <a class="desk-btn is-primary" href="signin.html">Sign In</a>
-        <a class="desk-btn" href="contact.html">Contact Desk</a>
-      </div>
-    </div>
-    <div class="desk-title-wrap">
-      <p class="desk-crumb">T7 / Desk</p>
-      <h1 class="desk-title" id="desk-title">Discover your next <em>acquisition.</em></h1>
-      <p class="desk-sub" id="desk-sub">Browse diamonds and gold from the Kimberley Trade Desk. Explore a lot and request a quote — we’ll guide you through the next steps.</p>
-    </div>
-  </div>
-</header>
-
-<nav class="market-strip" aria-label="Trade Desk sections"><div class="market-strip-inner"><div class="market-primary"><a href="trade.html" class="is-active" aria-current="page">Browse Lots</a><a href="how-to-buy.html">How to Buy</a><a href="provenance.html">Origin &amp; Documentation</a></div><div class="market-accounts" aria-label="Trade accounts"><a href="buyer.html">Buyer account</a><a href="seller.html">Seller account</a></div></div></nav>
-
-<section class="desk-body">
-  <div class="wrap">
-    <div class="browse-heading"><div><p class="eyebrow">The live board</p><h2>Explore listed lots</h2></div><a class="textlink" href="how-to-buy.html">How buying works ↗</a></div><div class="commodity-tabs" aria-label="Filter by commodity"><button type="button" data-commodity="" aria-pressed="true">All lots</button><button type="button" data-commodity="diamond" aria-pressed="false">Diamonds</button><button type="button" data-commodity="gold" aria-pressed="false">Gold</button></div><div class="stat-row" id="stat-row"></div>
-
-    <form class="board-controls is-collapsed" id="controls" aria-label="Filter lots">
-      <div class="search-wrap">
-        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M16.5 16.5 21 21" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-        <input type="search" id="q" placeholder="Search by lot name, ID or keyword…" aria-label="Search by lot ID, name, commodity, type or keyword">
-      </div>
-      <div class="filter-row" id="filter-row"></div>
-    </form>
-
-    <div class="board-bar">
-      <button type="button" class="filters-toggle" id="filters-toggle" aria-expanded="false" aria-controls="controls">More filters</button>
-      <p class="board-count" id="board-count" role="status">Loading the board…</p>
-      <div style="display:flex;align-items:center;gap:16px">
-        <button type="button" class="reset-link" id="reset" hidden>Clear filters</button>
-        <label class="board-sort">Sort
-          <select id="sort">
-            <option value="newest">Newest</option>
-            <option value="oldest">Oldest</option>
-            <option value="commodity">Commodity</option>
-            <option value="lot">Lot ID</option>
-          </select>
-        </label>
-      </div>
-    </div>
-
-    <div id="board" aria-live="polite"></div>
-
-    <div id="alerts"></div>
-
-    <p class="desk-footnote">
-      Listings are maintained by the Triple 7 Trade Desk. Figures shown are desk listings,
-      not live market pricing. Commercial terms are issued per quote.
-    </p>
-
-    <noscript><div class="empty"><h3>Enable JavaScript</h3><p>The board is filtered in the browser. Call the Kimberley desk on +27 73 569 4045.</p></div></noscript>
-  </div>
-</section>
+<header class="catalogue-head"><div class="wrap"><p class="eyebrow">Kimberley, South Africa</p><h1>Trade Desk</h1><p>Browse diamond and gold lots. Select a lot to view its details and request a quote.</p></div></header>
+<main class="catalogue-main"><div class="wrap">
+<div class="catalogue-top"><div class="commodity-tabs" aria-label="Filter by commodity"><button type="button" data-commodity="" aria-pressed="true">All Lots</button><button type="button" data-commodity="diamond" aria-pressed="false">Diamonds</button><button type="button" data-commodity="gold" aria-pressed="false">Gold</button></div><div class="stat-row" id="stat-row" role="status"></div></div>
+<div class="catalogue-layout">
+<aside class="catalogue-sidebar" aria-label="Refine the catalogue"><button type="button" class="filters-toggle" id="filters-toggle" aria-expanded="false" aria-controls="controls">Filters</button><form class="board-controls is-collapsed" id="controls" aria-label="Filter lots"><h2>Refine your search</h2><div class="filter-row" id="filter-row"></div><p class="filter-help">Filters reflect the details available for the listed lots.</p></form></aside>
+<div class="catalogue-results">
+<div class="catalogue-toolbar"><div class="search-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M16.5 16.5 21 21" stroke="currentColor" stroke-width="1.8"/></svg><input type="search" id="q" placeholder="Search by name, lot ID or keyword" aria-label="Search lots"></div><label class="board-sort">Sort by<select id="sort"><option value="newest">Newest</option><option value="oldest">Oldest</option><option value="commodity">Commodity</option><option value="lot">Lot ID</option></select></label></div>
+<div class="catalogue-resultbar"><p class="board-count" id="board-count" role="status">Loading lots…</p><button type="button" class="reset-link" id="reset" hidden>Clear filters</button></div>
+<div id="board" aria-live="polite"></div>
+<p class="catalogue-note">Prices and commercial terms are confirmed per quote. Listed lots are not live market prices.</p>
+<noscript><p>Enable JavaScript to browse the catalogue, or contact the Kimberley desk on +27 73 569 4045.</p></noscript>
+</div></div>
+<section class="buying-summary" aria-labelledby="buying-title"><div class="buying-intro"><p class="eyebrow">A guided purchase</p><h2 id="buying-title">How buying works</h2><a href="how-to-buy.html" class="btn btn-outline">Read the Full Guide</a></div><ol class="buying-steps"><li><span>01</span><h3>Explore a lot</h3><p>Review the details and find a lot that suits your requirements.</p></li><li><span>02</span><h3>Request a quote</h3><p>Sign in and share your interest. The desk confirms availability and terms.</p></li><li><span>03</span><h3>Agree with the desk</h3><p>Review the written quote and arrange settlement directly with our team.</p></li></ol></section>
+<div class="catalogue-support"><a class="btn btn-outline" href="provenance.html">Origin &amp; Documentation</a><a class="btn btn-outline" href="contact.html">Contact the Desk</a></div>
+<div id="alerts"></div>
+</div></main>
 
 <footer class="footer">
   <div class="wrap">
@@ -157,5 +113,6 @@
 <script src="js/auth.js"></script>
 <script src="js/board.js"></script>
 <script src="js/alerts.js"></script>
+<script src="js/account-menu.js"></script>
 </body>
 </html>
