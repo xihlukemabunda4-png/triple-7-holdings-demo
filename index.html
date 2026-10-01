@@ -8,15 +8,16 @@
 <link rel="icon" type="image/png" href="images/logo-icon.png?v=2">
 <link rel="stylesheet" href="css/styles.css">
 <link rel="stylesheet" href="css/trade.css">
+<link rel="stylesheet" href="css/refresh.css">
 </head>
-<body>
+<body class="page-index">
 
 <nav class="nav">
   <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;width:100%">
     <a href="index.html" class="nav-mark" aria-label="Triple 7 Holdings — home"><img src="images/logo-light.png?v=2" alt="Triple 7 Holdings" width="437" height="124"></a>
     <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
     <div class="nav-links">
-      <a href="index.html" class="is-active">Home</a>
+      <a href="index.html" class="is-active" aria-current="page">Home</a>
       <a href="about.html">About</a>
       <a href="trade.html">Trade</a>
       <a href="locations.html">Locations</a>
@@ -31,11 +32,20 @@
   <div class="hero-media"><img src="images/hero-douglas1.jpg" alt="Open quarry at a Triple 7 Holdings mine, Douglas"></div>
   <div class="hero-content">
     <p class="eyebrow">EST. 2016 — KIMBERLEY, SOUTH AFRICA</p>
-    <h1 class="hero-title">FOUND IN THE<br>GROUND. CUT<br>FOR THE WORLD.</h1>
+    <h1 class="hero-title">From African ground.<br><em>To something extraordinary.</em></h1>
     <p class="hero-sub">We mine, sort, and supply natural, untreated, ethically-sourced diamonds from six sites across Southern Africa.</p>
-    <a href="locations.html" class="btn btn-ghost">View Our Locations</a>
+    <div class="hero-actions"><a href="trade.html" class="btn btn-solid">Browse Diamonds &amp; Gold</a><a href="locations.html" class="btn btn-ghost">Explore Our Mines</a></div><div class="hero-caption"><span>MINING · SORTING · CUTTING · TRADE</span><a href="#home-trade">Discover the collection ↓</a></div>
   </div>
 </header>
+<section class="home-trade section" id="home-trade">
+  <div class="wrap">
+    <div class="grid-head"><div><p class="eyebrow">The Triple 7 Trade Desk</p><h2 class="section-title">From the source.<br><em>Within your reach.</em></h2></div><div class="trade-intro"><p>Explore our diamond and gold listings. Find a lot that interests you, then request a quote directly from our Kimberley desk.</p><a href="how-to-buy.html" class="textlink">New to the desk? Here’s how it works →</a></div></div>
+    <div class="home-categories"><a href="trade.html" class="is-active">All lots ↗</a><a href="trade.html?commodity=diamond">Diamonds ↗</a><a href="trade.html?commodity=gold">Gold ↗</a></div>
+    <div class="home-lots board-grid" id="home-lots" aria-live="polite"><p>Explore our current listings on the <a href="trade.html" class="textlink">Trade Desk →</a></p></div>
+    <div class="trade-bottom"><p>Browse a lot. Request a quote. Agree terms with the desk.</p><a href="trade.html" class="btn btn-solid">View All Lots</a></div>
+  </div>
+</section>
+
 
 <section class="section-tight">
   <div class="wrap">
@@ -171,6 +181,10 @@
   </div>
 </footer>
 <script src="js/script.js"></script>
+<script src="js/config.js"></script>
+<script src="js/t7-lots.js"></script>
 <script src="js/trade.js"></script>
+<script src="js/api.js"></script>
+<script src="js/home.js"></script>
 </body>
 </html>

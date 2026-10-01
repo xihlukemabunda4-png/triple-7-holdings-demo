@@ -8,8 +8,9 @@
 <link rel="icon" type="image/png" href="images/logo-icon.png?v=2">
 <link rel="stylesheet" href="css/styles.css">
 <link rel="stylesheet" href="css/trade.css">
+<link rel="stylesheet" href="css/refresh.css">
 </head>
-<body>
+<body class="page-trade">
 
 <nav class="nav">
   <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;width:100%">
@@ -18,7 +19,7 @@
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
-      <a href="trade.html" class="is-active">Trade</a>
+      <a href="trade.html" class="is-active" aria-current="page">Trade</a>
       <a href="locations.html">Locations</a>
       <a href="investors.html">Investors</a>
       <a href="jobs.html">Jobs</a>
@@ -39,38 +40,28 @@
     </div>
     <div class="desk-title-wrap">
       <p class="desk-crumb">T7 / Desk</p>
-      <h1 class="desk-title" id="desk-title">Live Board</h1>
-      <p class="desk-sub" id="desk-sub">All diamond and gold lots currently listed on the Triple 7 Kimberley desk. Open a lot to request a quote.</p>
+      <h1 class="desk-title" id="desk-title">Discover your next <em>acquisition.</em></h1>
+      <p class="desk-sub" id="desk-sub">Browse diamonds and gold from the Kimberley Trade Desk. Explore a lot and request a quote — we’ll guide you through the next steps.</p>
     </div>
   </div>
 </header>
 
-<nav class="market-strip" aria-label="Trade Desk sections">
-  <div class="market-strip-inner">
-      <a href="trade.html" class="is-active">Live Board</a>
-      <a href="trade.html?commodity=diamond">Diamonds<span class="strip-state">Closed</span></a>
-      <a href="trade.html?commodity=gold">Gold<span class="strip-state">Closed</span></a>
-      <a href="how-to-buy.html">How To Buy</a>
-      <a href="provenance.html">Provenance</a>
-      <a href="buyer.html">Buyer</a>
-      <a href="seller.html">Seller</a>
-  </div>
-</nav>
+<nav class="market-strip" aria-label="Trade Desk sections"><div class="market-strip-inner"><div class="market-primary"><a href="trade.html" class="is-active" aria-current="page">Browse Lots</a><a href="how-to-buy.html">How to Buy</a><a href="provenance.html">Origin &amp; Documentation</a></div><div class="market-accounts" aria-label="Trade accounts"><a href="buyer.html">Buyer account</a><a href="seller.html">Seller account</a></div></div></nav>
 
 <section class="desk-body">
   <div class="wrap">
-    <div class="stat-row" id="stat-row"></div>
+    <div class="browse-heading"><div><p class="eyebrow">The live board</p><h2>Explore listed lots</h2></div><a class="textlink" href="how-to-buy.html">How buying works ↗</a></div><div class="commodity-tabs" aria-label="Filter by commodity"><button type="button" data-commodity="" aria-pressed="true">All lots</button><button type="button" data-commodity="diamond" aria-pressed="false">Diamonds</button><button type="button" data-commodity="gold" aria-pressed="false">Gold</button></div><div class="stat-row" id="stat-row"></div>
 
     <form class="board-controls is-collapsed" id="controls" aria-label="Filter lots">
       <div class="search-wrap">
         <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M16.5 16.5 21 21" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-        <input type="search" id="q" placeholder="Search lots" aria-label="Search by lot ID, name, commodity, type or keyword">
+        <input type="search" id="q" placeholder="Search by lot name, ID or keyword…" aria-label="Search by lot ID, name, commodity, type or keyword">
       </div>
       <div class="filter-row" id="filter-row"></div>
     </form>
 
     <div class="board-bar">
-      <button type="button" class="filters-toggle" id="filters-toggle" aria-expanded="false" aria-controls="controls">Filters</button>
+      <button type="button" class="filters-toggle" id="filters-toggle" aria-expanded="false" aria-controls="controls">More filters</button>
       <p class="board-count" id="board-count" role="status">Loading the board…</p>
       <div style="display:flex;align-items:center;gap:16px">
         <button type="button" class="reset-link" id="reset" hidden>Clear filters</button>
