@@ -3,14 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Your Selection — Triple 7 Holdings</title>
-<meta name="description" content="The diamonds you have set aside from the Triple 7 Holdings collection.">
+<title>Seller Dashboard — Trade Desk — Triple 7 Holdings</title>
+<meta name="description" content="Seller dashboard on the Triple 7 Holdings Trade Desk.">
 <meta name="robots" content="noindex">
 <link rel="icon" type="image/png" href="images/logo-icon.png?v=2">
 <link rel="stylesheet" href="css/styles.css">
-<link rel="stylesheet" href="css/commerce.css">
+<link rel="stylesheet" href="css/trade.css">
+<link rel="stylesheet" href="css/refresh.css">
 </head>
-<body>
+<body class="page-seller">
 
 <nav class="nav">
   <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;width:100%">
@@ -19,7 +20,7 @@
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
-      <a href="diamonds.html">Diamonds</a>
+      <a href="trade.html" class="is-active">Trade</a>
       <a href="locations.html">Locations</a>
       <a href="investors.html">Investors</a>
       <a href="jobs.html">Jobs</a>
@@ -28,18 +29,35 @@
   </div>
 </nav>
 
-<header class="pagehead">
-  <div class="pagehead-media"><img src="images/hero-banner100.jpg" alt=""></div>
-  <div class="wrap">
-    <p class="eyebrow on-dark">Set Aside</p>
-    <h1 class="pagehead-title">Your Selection</h1>
-    <p class="crumb"><a href="index.html">Home</a> / <a href="diamonds.html">Diamonds</a> / Selection</p>
+<header class="desk-head">
+  <div class="desk-inner">
+    <div class="desk-strip">
+      <span class="desk-id">Trade Desk <b>·&nbsp; Kimberley</b></span>
+      <div class="desk-actions">
+        <span class="desk-count" id="desk-count"></span>
+        <a class="desk-btn is-primary" href="signin.html">Sign In</a>
+        <a class="desk-btn" href="contact.html">Contact Desk</a>
+      </div>
+    </div>
+    <div class="desk-title-wrap">
+      <p class="desk-crumb"><a href="trade.html">T7 / Desk</a> / Seller</p>
+      <h1 class="desk-title" id="desk-title">Seller Desk</h1>
+      <p class="desk-sub" id="desk-sub"></p>
+    </div>
   </div>
 </header>
 
-<section class="section">
+<nav class="market-strip" aria-label="Trade Desk sections"><div class="market-strip-inner"><div class="market-primary"><a href="trade.html">Browse Lots</a><a href="how-to-buy.html">How to Buy</a><a href="provenance.html">Origin &amp; Documentation</a></div><div class="market-accounts" aria-label="Trade accounts"><a href="buyer.html">Buyer account</a><a href="seller.html" class="is-active" aria-current="page">Seller account</a></div></div></nav>
+<div class="sandbox-bar">
   <div class="wrap">
-    <div id="cart-root" aria-live="polite"></div>
+    <b>Sandbox</b>
+    <span>Demonstration only — no password is checked, nothing is verified, and nothing you enter leaves this browser.</span>
+  </div>
+</div>
+
+<section class="desk-body">
+  <div class="wrap">
+    <div id="seller-root" aria-live="polite"></div>
   </div>
 </section>
 
@@ -48,7 +66,7 @@
     <div class="footer-top">
       <div>
         <a href="index.html" class="footer-mark" aria-label="Triple 7 Holdings — home"><img src="images/logo-light.png?v=2" alt="Triple 7 Holdings" width="437" height="124"></a>
-        <p>Natural, untreated, ethically-sourced diamonds mined, sorted, and supplied from six sites across Southern Africa since 2016.</p>
+        <p>Natural, untreated, ethically-sourced diamonds mined, sorted, and supplied from six sites across Southern Africa.</p>
         <div class="footer-social">
           <a class="s-ig" href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Triple 7 Holdings on Instagram">
             <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -69,7 +87,7 @@
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="diamonds.html">Diamonds</a></li>
+          <li><a href="trade.html">Trade</a></li>
           <li><a href="locations.html">Locations</a></li>
           <li><a href="investors.html">Investors</a></li>
           <li><a href="jobs.html">Jobs</a></li>
@@ -77,14 +95,13 @@
         </ul>
       </div>
       <div>
-        <h4>Sites</h4>
+        <h4>Trade Desk</h4>
         <ul>
-          <li><a href="mine-maxwill.html">Maxwill Mine</a></li>
-          <li><a href="mine-bucklands.html">Bucklands Mine</a></li>
-          <li><a href="mine-christiana.html">Christiana Mine</a></li>
-          <li><a href="mine-modican.html">Modican Mine</a></li>
-          <li><a href="mine-thaba-kholo.html">Thaba Kholo</a></li>
-          <li><a href="mine-sepelong.html">Sepelong Game Farm</a></li>
+          <li><a href="trade.html">Live Board</a></li>
+          <li><a href="how-to-buy.html">How To Buy</a></li>
+          <li><a href="provenance.html">Provenance</a></li>
+          <li><a href="signin.html?role=buyer">Buyer Sign In</a></li>
+          <li><a href="signin.html?role=seller">Seller Sign In</a></li>
         </ul>
       </div>
       <div>
@@ -106,9 +123,10 @@
 
 <script src="js/script.js"></script>
 <script src="js/config.js"></script>
-<script src="js/t7-data.js"></script>
+<script src="js/t7-lots.js"></script>
 <script src="js/api.js"></script>
-<script src="js/commerce.js"></script>
-<script src="js/cart-page.js"></script>
+<script src="js/trade.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/seller.js"></script>
 </body>
 </html>
